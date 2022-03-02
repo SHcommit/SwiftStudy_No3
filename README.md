@@ -6,7 +6,8 @@
 
 🤔 특정 기능에 대한 summary도 마크다운으로 요약할 예정입니다.
 
-🌱 Date : 2022.03.02 시작!
+🌱 Date : 미정
 
 <div align=center><h2> 📗 Book cover </h2></div>
-![book](https://user-images.githubusercontent.com/96910404/156348411-a27dd2ee-e6f9-425c-9b4f-6ec691a4af15.jpeg)
+
+![book](https://user-images.githubusercontent.com/96910404/156348411-a27dd2ee-e6f9-425c-9b4f-6ec691a4af15.jpeg) 
