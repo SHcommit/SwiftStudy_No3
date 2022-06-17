@@ -7,16 +7,26 @@
 
 import UIKit
 
-
 class SettingController : UIViewController{
+    
     var contents : SettingContentDTO?
+    
     override func viewDidLoad() {
         contents = SettingContentDTO(view: &self.view)
         setNavigationTitle()
+        
         self.storyboard?.instantiateViewController(identifier: "SettingController")
+        
         //액션 메서드
         self.contents?.updateSwitch.addTarget(self, action: #selector(presentUpdateValue(_:)), for: .valueChanged)
         self.contents?.weekStepper.addTarget(self, action: #selector(presentIntervalValue(_:)), for: .valueChanged)
+        
+        /**
+         * navigationoBarButton 은 신기하네..
+         * 바 버튼 달고 이벤트 헨들러도 달아줌
+         */
+        self.contents?.submitBtn = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(submit(_:)))
+        self.navigationItem.rightBarButtonItem = contents?.submitBtn
         
         
         //한번 addSubView로만 추가해봤어
@@ -56,11 +66,16 @@ extension SettingController {
             self.navigationController?.pushViewController(SController, animated: true)
         }
     }
-}
-
-//MARK: - add contents func
-extension SettingController {
-    
+    @objc
+    func submit(_ sender : Any)
+    {
+        let rvc = ReadViewController()
+        rvc.pInterval = self.contents?.weekStepper.value
+        rvc.pEmail    = self.contents?.inputEmail.text
+        rvc.pUpdate   = self.contents?.updateSwitch.isOn
+        
+        self.navigationController?.pushViewController(rvc, animated: true)
+    }
 }
 
 //MARK: - design contents
