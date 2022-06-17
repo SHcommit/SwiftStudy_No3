@@ -9,6 +9,10 @@ import UIKit
 
 class ReadViewController : UIViewController
 {
+    var pEmail    : String?
+    var pUpdate   : Bool?
+    var pInterval : Double?
+    
     var content : ReadViewContentDTO?
     
     override func viewDidLoad()
@@ -17,7 +21,7 @@ class ReadViewController : UIViewController
         
         self.view.backgroundColor = .white
         
-        content = ReadViewContentDTO(self.view)
+        content = ReadViewContentDTO(&self.view)
         
     }
 }
