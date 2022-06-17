@@ -27,11 +27,11 @@
 
 :black_medium_square: 모든 변수에 옵셔널 부여, 강제 옵셔널 해제 연산자 사용x
 
-:white_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button/Model">변수는 따로 Model을 통해 DTO클래스를 통해서 다루었다.</a>
+:white_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button/Model">변수는 따로 Model에서 VO클래스를 통해서!!</a>
 
-:black_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button">MVC 패턴을 사용했다. </a>
+:black_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button">MVC 패턴 사용 </a>
 
-:white_medium_square:  layz 키워드 사용하는것도 나쁘지 않네 init대신
+:white_medium_square:  layz 키워드 사용하는것도 나쁘지 않음( init대신 )
 
 :black_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button/Model">DTO와 VO in Model </a>
 
