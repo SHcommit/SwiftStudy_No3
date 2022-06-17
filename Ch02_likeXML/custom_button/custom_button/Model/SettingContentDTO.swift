@@ -20,8 +20,8 @@ class SettingContentDTO
      *갱신주기
      *갱신주기 stepper
      */
-    var email         = UILabel()
-    var inputEmail    = UITextField()
+    var email         : UILabel?
+    var inputEmail    : UITextField?
     
     var autoUpdate    = UILabel()
     var updateSwitch  = UISwitch()
@@ -32,7 +32,8 @@ class SettingContentDTO
     var weekValue     = UILabel()
     
     //ReadViewController로 전환하기 위한 버튼
-    var submitBtn     = UIBarButtonItem()
+    var submitBtn     : UIBarButtonItem?
+    
     init(view : inout UIView){
         setContentsUI()
         setContentsInstance(view: &view)
@@ -108,19 +109,18 @@ extension SettingContentDTO
         weekValue.font      = UIFont.systemFont(ofSize: 12)
         weekValue.textColor = UIColor.red
     }
-    func setSubmitBtnUI(submitBtn : inout UIButton)
-    {
-        submitBtn = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action : #selector(submit(_:)))
-    }
-    
-    //submitbutton Handler
-    @objc
-    func submit(_ sender: Any)
-    {
-        let rvc = ReadViewController()
-        rvc.content?.pEmail
-        rvc.cont
-    }
+
+//    //submitbutton Handler
+//    @objc
+//    func submit(_ sender: Any)
+//    {
+//        let rvc       = ReadViewController()
+//        rvc.pEmail    = self.inputEmail.text
+//        rvc.pUpdate   = self.updateSwitch.isOn
+//        rvc.pInterval = self.weekStepper.value
+//
+//        self.navigationController?.pushViewController(rvc, animated: true)
+//    }
 }
 
 //MARK: - set contents instance
