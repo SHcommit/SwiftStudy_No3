@@ -9,17 +9,17 @@ import UIKit
 
 class SettingController : UIViewController{
     
-    var contents : SettingContentDTO?
+    var contents : SettingContentVO?
     
     override func viewDidLoad() {
-        contents = SettingContentDTO(view: &self.view)
+        contents = SettingContentVO(view: &self.view)
         setNavigationTitle()
         
         self.storyboard?.instantiateViewController(identifier: "SettingController")
         
         //액션 메서드
-        self.contents?.updateSwitch.addTarget(self, action: #selector(presentUpdateValue(_:)), for: .valueChanged)
-        self.contents?.weekStepper.addTarget(self, action: #selector(presentIntervalValue(_:)), for: .valueChanged)
+        self.contents?.updateSwitch?.addTarget(self, action: #selector(presentUpdateValue(_:)), for: .valueChanged)
+        self.contents?.weekStepper?.addTarget(self, action: #selector(presentIntervalValue(_:)), for: .valueChanged)
         
         /**
          * navigationoBarButton 은 신기하네..
@@ -50,13 +50,13 @@ extension SettingController {
     @objc
     func presentUpdateValue(_ sender : UISwitch)
     {
-        self.contents?.updateValue.text = (sender.isOn == true ? "갱신함" : "갱신하지 않음")
+        self.contents?.updateValue?.text = (sender.isOn == true ? "갱신함" : "갱신하지 않음")
     }
     
     @objc
     func presentIntervalValue(_ sender : UIStepper)
     {
-        self.contents?.weekValue.text = ("\(Int(sender.value))분 마다")
+        self.contents?.weekValue?.text = ("\(Int(sender.value))분 마다")
     }
     @objc
     func presentViewController(_ sender: UIButton)
@@ -70,9 +70,9 @@ extension SettingController {
     func submit(_ sender : Any)
     {
         let rvc = ReadViewController()
-        rvc.pInterval = self.contents?.weekStepper.value
-        rvc.pEmail    = self.contents?.inputEmail.text
-        rvc.pUpdate   = self.contents?.updateSwitch.isOn
+        rvc.pInterval = self.contents?.weekStepper?.value
+        rvc.pEmail = self.contents?.inputEmail?.text
+        rvc.pUpdate   = self.contents?.updateSwitch?.isOn
         
         self.navigationController?.pushViewController(rvc, animated: true)
     }

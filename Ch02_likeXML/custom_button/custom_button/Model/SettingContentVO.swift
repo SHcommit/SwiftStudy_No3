@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingContentDTO
+class SettingContentVO
 {
     /**
      *@param : email              = 이메일
@@ -52,7 +52,7 @@ class SettingContentDTO
 }
 
 //MARK: - set contentsUI
-extension SettingContentDTO
+extension SettingContentVO
 {
     func setEmailUI(email : inout UILabel?, view : inout UIView)
     {
@@ -174,7 +174,7 @@ extension SettingContentDTO
 }
 
 //MARK: - set contents instance
-extension SettingContentDTO {
+extension SettingContentVO {
     func setContentsUI(_ view : inout UIView){
         setEmailUI(email: &email,view: &view)
         setInputEmailUI(emailTF: &inputEmail,view: &view)

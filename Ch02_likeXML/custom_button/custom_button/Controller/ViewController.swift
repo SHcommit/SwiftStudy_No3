@@ -2,19 +2,21 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    var subject : UILabel! = {UILabel()}()
-    var btn     : UIButton = {UIButton()}()
-    var flag    : Bool     = false
+    var subject   : UILabel?
+    var btn       : UIButton?
+    lazy var flag = false
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // TODO : 버튼 인스턴스화 이후 이벤트 헨들러 부여
+        subject = UILabel()
+        btn     = UIButton(type: .system)
+        
         self.storyboard?.instantiateViewController(identifier: "ViewController")
+
         addTestButton(button: &btn)
-        btn.addTarget(self, action: #selector(btnOnClick(_:)), for: .touchUpInside)
-        //버튼에 쉐도우 한번?
-        addShadowInButotn(button: &btn)
+        btn?.addTarget(self, action: #selector(btnOnClick(_:)), for: .touchUpInside)
         // UILabel
         addHelloLabel(label: &subject)
     }
@@ -39,31 +41,41 @@ extension ViewController{
      *
      * 타이틀 등 text를 삽입할 경우 .set~ 키워드 사용.
      */
-    func addTestButton(button : inout UIButton)
+    func addTestButton(button : inout UIButton?)
     {
-        button                    = UIButton(type: .system)
-        button.frame              = CGRect(x: 50, y: 100, width: 150, height: 30)
-        button.backgroundColor    = UIColor.cyan
-        button.layer.cornerRadius = CGFloat(3.0)
-        button.center             = CGPoint(x: self.view.frame.size.width/2, y: 100)
-        button.setTitle("테스트 버튼", for: .normal)
-        button.setTitleColor(UIColor.orange, for: .normal)
-        self.view.addSubview(button)
+        if var testButton = button
+        {
+            testButton.frame        = CGRect(x: 50, y: 100, width: 150, height: 30)
+            testButton.backgroundColor    = UIColor.cyan
+            testButton.layer.cornerRadius = CGFloat(3.0)
+            testButton.center             = CGPoint(x: self.view.frame.size.width/2, y: 100)
+            testButton.setTitle("테스트 버튼", for: .normal)
+            testButton.setTitleColor(UIColor.orange, for: .normal)
+            //버튼에 쉐도우 한번?
+            addShadowInButotn(button: &testButton)
+            
+            button = testButton
+            self.view.addSubview(testButton)
+
+        }
     }
-    func addHelloLabel(label : inout UILabel)
+    func addHelloLabel(label : inout UILabel?)
     {
-        label = UILabel()
-        label.text          = "hello! xml 좀 연습 해야겠어!!"
-        label.frame         = CGRect(x: 50, y: 100, width: 100, height: 30)
-        //Wrap content
-        label.sizeToFit()
-        label.textAlignment = .center
-        label.textColor     = UIColor.lightGray
-        label.center        = CGPoint(x: self.view.frame.width/2, y: 200)
-        
-        //음 쉐도우 한번 써볼까잇~
-        addShadowInLabel(label: &label)
-        self.view.addSubview(label)
+        if var testLabel = label
+        {
+            testLabel.text          = "hello! xml 좀 연습 해야겠어!!"
+            testLabel.frame         = CGRect(x: 50, y: 100, width: 100, height: 30)
+            //Wrap content
+            testLabel.sizeToFit()
+            testLabel.textAlignment = .center
+            testLabel.textColor     = UIColor.lightGray
+            testLabel.center        = CGPoint(x: self.view.frame.width/2, y: 200)
+            //음 쉐도우 한번 써볼까잇~
+            addShadowInLabel(label: &testLabel)
+            label = testLabel
+            
+            self.view.addSubview(testLabel)
+        }
     }
 }
 
@@ -95,7 +107,7 @@ extension ViewController{
     
     @objc func sayHello(_ sender : Any)
     {
-        self.subject.text = "GoodBye~, IB!"
+        self.subject?.text = "GoodBye~, IB!"
     }
 }
 

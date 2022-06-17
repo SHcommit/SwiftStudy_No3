@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1548163D285444F900568A20 /* SettingContentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1548163C285444F900568A20 /* SettingContentDTO.swift */; };
+		1548163D285444F900568A20 /* SettingContentVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1548163C285444F900568A20 /* SettingContentVO.swift */; };
 		155FB1D4285442B60025A69E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FB1D3285442B60025A69E /* SettingController.swift */; };
 		15E54B63285B64C700ED1128 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E54B62285B64C700ED1128 /* ReadViewController.swift */; };
-		15E54B65285B65A200ED1128 /* ReadViewContentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E54B64285B65A200ED1128 /* ReadViewContentDTO.swift */; };
+		15E54B65285B65A200ED1128 /* ReadViewContentVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E54B64285B65A200ED1128 /* ReadViewContentVO.swift */; };
 		15E766EF2852FCDE00EA19CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E766EE2852FCDE00EA19CC /* AppDelegate.swift */; };
 		15E766F12852FCDE00EA19CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E766F02852FCDE00EA19CC /* SceneDelegate.swift */; };
 		15E766F32852FCDE00EA19CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E766F22852FCDE00EA19CC /* ViewController.swift */; };
@@ -20,10 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1548163C285444F900568A20 /* SettingContentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentDTO.swift; sourceTree = "<group>"; };
+		1548163C285444F900568A20 /* SettingContentVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentVO.swift; sourceTree = "<group>"; };
 		155FB1D3285442B60025A69E /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingController.swift; path = custom_button/Controller/SettingController.swift; sourceTree = SOURCE_ROOT; };
 		15E54B62285B64C700ED1128 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
-		15E54B64285B65A200ED1128 /* ReadViewContentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewContentDTO.swift; sourceTree = "<group>"; };
+		15E54B64285B65A200ED1128 /* ReadViewContentVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewContentVO.swift; sourceTree = "<group>"; };
 		15E766EB2852FCDE00EA19CC /* custom_button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = custom_button.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E766EE2852FCDE00EA19CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15E766F02852FCDE00EA19CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,8 +48,8 @@
 		1548163B285444DD00568A20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1548163C285444F900568A20 /* SettingContentDTO.swift */,
-				15E54B64285B65A200ED1128 /* ReadViewContentDTO.swift */,
+				1548163C285444F900568A20 /* SettingContentVO.swift */,
+				15E54B64285B65A200ED1128 /* ReadViewContentVO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,12 +175,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				155FB1D4285442B60025A69E /* SettingController.swift in Sources */,
-				1548163D285444F900568A20 /* SettingContentDTO.swift in Sources */,
+				1548163D285444F900568A20 /* SettingContentVO.swift in Sources */,
 				15E766F32852FCDE00EA19CC /* ViewController.swift in Sources */,
 				15E766EF2852FCDE00EA19CC /* AppDelegate.swift in Sources */,
 				15E54B63285B64C700ED1128 /* ReadViewController.swift in Sources */,
 				15E766F12852FCDE00EA19CC /* SceneDelegate.swift in Sources */,
-				15E54B65285B65A200ED1128 /* ReadViewContentDTO.swift in Sources */,
+				15E54B65285B65A200ED1128 /* ReadViewContentVO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ class ReadViewController : UIViewController
     var pUpdate   : Bool?
     var pInterval : Double?
     
-    var content : ReadViewContentDTO?
+    var content : ReadViewContentVO?
     
     override func viewDidLoad()
     {
@@ -21,7 +21,7 @@ class ReadViewController : UIViewController
         
         self.view.backgroundColor = .white
         
-        content = ReadViewContentDTO(&self.view)
+        content = ReadViewContentVO(&self.view, self)
         
     }
 }
