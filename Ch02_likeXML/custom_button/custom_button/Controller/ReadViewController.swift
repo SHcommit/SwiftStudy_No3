@@ -9,9 +9,7 @@ import UIKit
 
 class ReadViewController : UIViewController
 {
-    var pEmail    : String?
-    var pUpdate   : Bool?
-    var pInterval : Double?
+    var content : ReadViewContentDTO?
     
     override func viewDidLoad()
     {
@@ -19,8 +17,7 @@ class ReadViewController : UIViewController
         
         self.view.backgroundColor = .white
         
-        let email    = UILabel()
-        let update   = UILabel()
-        let interval = UILabel()
+        content = ReadViewContentDTO(self.view)
+        
     }
 }

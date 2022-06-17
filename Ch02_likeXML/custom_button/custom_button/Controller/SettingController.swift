@@ -31,6 +31,7 @@ class SettingController : UIViewController{
             transScene.addTarget(self, action: #selector(presentViewController(_:)), for: .touchDown)
             return transScene
         }())
+        
     }
 }
 

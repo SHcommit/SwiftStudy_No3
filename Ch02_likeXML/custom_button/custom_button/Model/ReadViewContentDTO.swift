@@ -13,8 +13,7 @@ class ReadViewContentDTO
     var pUpdate   : Bool?
     var pInterval : Double?
     var email     = UILabel()
-    var update
-    = UILabel()
+    var update    = UILabel()
     var interval  = UILabel()
     
     init(_ view : UIView)

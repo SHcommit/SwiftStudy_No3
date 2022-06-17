@@ -31,6 +31,8 @@ class SettingContentDTO
     var weekStepper   = UIStepper()
     var weekValue     = UILabel()
     
+    //ReadViewController로 전환하기 위한 버튼
+    var submitBtn     = UIBarButtonItem()
     init(view : inout UIView){
         setContentsUI()
         setContentsInstance(view: &view)
@@ -105,6 +107,19 @@ extension SettingContentDTO
         weekValue.text      = "0분마다"
         weekValue.font      = UIFont.systemFont(ofSize: 12)
         weekValue.textColor = UIColor.red
+    }
+    func setSubmitBtnUI(submitBtn : inout UIButton)
+    {
+        submitBtn = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action : #selector(submit(_:)))
+    }
+    
+    //submitbutton Handler
+    @objc
+    func submit(_ sender: Any)
+    {
+        let rvc = ReadViewController()
+        rvc.content?.pEmail
+        rvc.cont
     }
 }
 
