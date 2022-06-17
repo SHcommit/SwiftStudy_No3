@@ -9,21 +9,22 @@ import UIKit
 
 class ReadViewContentDTO
 {
-    var pEmail    : String?
-    var pUpdate   : Bool?
-    var pInterval : Double?
-    var email     = UILabel()
-    var update    = UILabel()
-    var interval  = UILabel()
+    var email     : UILabel?
+    var update    : UILabel?
+    var interval  : UILabel?
+    var rvc       : ReadViewController?
     
-    init(_ view : UIView)
+    init(_ view : inout UIView)
     {
-        setEmailUI(email: &email)
-        setUpdateUI(update: &update)
-        setIntervalUI(interval: &interval)
-        view.addSubview(email)
-        view.addSubview(update)
-        view.addSubview(interval)
+        self.email    = UILabel()
+        self.update   = UILabel()
+        self.interval = UILabel()
+        
+        rvc = view as? ReadViewController
+    
+        setEmailUI(email: &email,rvc: &rvc, view: &view)
+        setUpdateUI(update: &update,rvc: &rvc, view: &view)
+        setIntervalUI(interval: &interval, rvc: &rvc, view :&view)
     }
         
     
@@ -32,32 +33,59 @@ class ReadViewContentDTO
 //MARK: - setContentsUI
 extension ReadViewContentDTO
 {
-    func setEmailUI(email : inout UILabel)
+    func setEmailUI(email : inout UILabel?, rvc : inout ReadViewController?, view : inout UIView)
     {
-        email = {
+
+        email =
+        {
            var mail     = UILabel()
-            email.frame = CGRect(x: 50, y: 100, width: 300, height: 30)
-            email.text  = "전달받은 이메일 : \(self.pEmail!)"
+            mail.frame = CGRect(x: 50, y: 100, width: 300, height: 30)
+            mail.text  = "전달받은 이메일 : \(rvc?.pEmail)"
             return mail
         }()
+        if let testEmail = email
+        {
+            view.addSubview(testEmail)
+        }
+        else
+        {
+            NSLog("email 변수 에러")
+        }
     }
-    func setUpdateUI(update : inout UILabel)
+    
+    func setUpdateUI(update : inout UILabel?, rvc : inout ReadViewController?, view : inout UIView)
     {
-        update       = UILabel()
-        update.frame = CGRect(x: 50, y: 150, width: 300, height: 30)
-        update.text  = "업데이트 여부 : \(self.pUpdate == true ? "업데이트 함" : "업데이트 안함")"
+        guard let testUpdate = update else
+        {
+            return NSLog("update 인스턴스 생성 안됐어요.")
+        }
+        update?.frame = CGRect(x: 50, y: 150, width: 300, height: 30)
+        update?.text  = "업데이트 여부 : \(rvc?.pUpdate == true ? "업데이트 함" : "업데이트 안함")"
         
+        if let testUpdate = update
+        {
+            view.addSubview(testUpdate)
+        }else
+        {
+            NSLog("update 변수는 nil 값입니다.")
+        }
     }
-    func setIntervalUI(interval : inout UILabel)
+    
+    func setIntervalUI(interval : inout UILabel?, rvc : inout ReadViewController?, view : inout UIView)
     {
-        interval       = UILabel()
-        interval.frame = CGRect(x: 50, y: 200, width: 300, height: 30)
-        interval.text  = "업데이트 주기 : \(self.pInterval!)분마다"
+        guard interval != nil else {
+            return NSLog("interval 인스턴스 생성 안됬다.")
+        }
+        interval?.frame = CGRect(x: 50, y: 200, width: 300, height: 30)
+        interval?.text  = "업데이트 주기 : \(rvc?.pInterval)분마다"
+        
+        if let testInterval = interval
+        {
+            view.addSubview(testInterval)
+        }
+        else{
+            NSLog("interval 변수 에러")
+        }
     }
 }
 
-//MARK: - set contents instance
-extension ReadViewController
-{
-    
-}
